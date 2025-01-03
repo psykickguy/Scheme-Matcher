@@ -29,7 +29,7 @@ def register():
         name = userDetails['name']
 
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users(aadhaar, email, mobile, name) VALUES(%s, %s, %s, %s)",(aadhaar, email, mobile, name))
+        cur.execute("INSERT INTO users(mobile, email, aadhaar, name) VALUES(%s, %s, %s, %s)",(mobile, email, aadhaar, name))
         mysql.connection.commit()
         cur.close()
 
