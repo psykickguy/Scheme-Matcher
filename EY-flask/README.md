@@ -13,7 +13,7 @@ in mysql cli:
 
   CREATE USER 'ey'@'localhost IDENTIFIED BY 'password';
   
-  GRANT ALL PERMISSIONS ON EY.* TO 'ey';
+  GRANT ALL PERMISSIONS ON EY.* TO 'ey'@'localhost' WITH GRANT OPTION;
 
 
 run app.py
