@@ -575,7 +575,7 @@ body {
   border-radius: 50%;
   position: absolute;
   top: 450px;
-  right: 20px;
+  right: 50%;
   cursor: pointer;
   background: #ffc107;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);

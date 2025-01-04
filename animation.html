@@ -26,9 +26,11 @@
 
             </div>
             <div class="login-section">
-                <div class="login"><i class="fas fa-user"></i> Sign-in  </div>
-               
-            </div>
+              <div class="login" onclick="navigateToPage('login.html')">
+                  <i class="fas fa-user"></i> Sign-in
+              </div>
+          </div>
+          </div>
         </div>
     </div>
 
@@ -203,13 +205,7 @@
             }
         });
 
-        document.addEventListener('mousemove', (e) => {
-            if (isDragging && !isExpanded) {
-                chatbot.style.left = (e.clientX - dragOffset.x) + 'px';
-                chatbot.style.bottom = (window.innerHeight - e.clientY - (chatbot.offsetHeight - dragOffset.y)) + 'px';
-            }
-        });
-
+       
         document.addEventListener('mouseup', () => {
             isDragging = false;
         });
@@ -293,7 +289,15 @@
     }
   });
 
-  
+  function navigateToPage(page) {
+    // Validate the input page to ensure safe navigation
+    if (page && typeof page === 'string') {
+        window.location.href = page;
+    } else {
+        console.error('Invalid page URL');
+    }
+}
+
 
 
 </script>
