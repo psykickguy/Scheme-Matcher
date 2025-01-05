@@ -19,6 +19,30 @@ body {
     border: none;
     left: 20px;
 }
+.scheme-section {
+  display: flex;
+  align-items: center;
+  gap: 0rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+
+  right: 1rem;
+}
+.scheme {
+  position: fixed;
+  top: 20px;
+  left: 7rem;
+  padding: 0.5rem 1rem;
+  border: 0px solid black;
+  border-radius: 5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.scheme:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  transform: scale(1.05);
+}
 
 .language-selector {
     display: flex;
