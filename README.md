@@ -7,3 +7,10 @@ website with backend in EY-flask
 5.Scheme info page
 6.saved info,applied schemes, etc.
 
+YOOOOOO
+for now i created a database of my own with very few data from schemes website.
+I used node.js, express.js and mongoDB for it
+for further continuation of project regarding database then only some API is needed as i created basic pathway for them
+As a frontend specialist and currently 4:30am I see off for now 
+and one more
+kaam karo... frontend wala agar database aur backend handle karna start kar diya toh tum logo ka kaam kya bacha
