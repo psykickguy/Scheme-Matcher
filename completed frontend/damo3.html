@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Toggle</title>
+  <link rel="stylesheet" href="demo3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+    <div class="header">
+        <div class="logo" onclick="navigateToPage('animation.html')">logo</div>
+        <div class="scheme-section">
+          <div class="scheme" onclick="navigateToPage('scheme.html')">
+              <i class="fas fa-user"></i> Schemes
+          </div>
+        </div>
+        <div class="menu">
+            <div class="language-selector">
+                <i class="fas fa-language"></i>
+                <select>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <div class="help-section" >
+                <div class="help"><i class="fas fa-question-circle"></i> Help</div>
+
+            </div>
+            <div class="login-section">
+              <div class="login" onclick="navigateToPage('login.html')">
+                  <i class="fas fa-user"></i> Sign-in
+              </div>
+          </div>
+          </div>
+        </div>
+        <button class="button" id="toggleButton">🌙 Dark Mode</button>
+        <script>
+           const toggleButton = document.getElementById('toggleButton');
+  const body = document.body;
+  const sunMoon = document.getElementById('sunMoon');
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+      toggleButton.textContent = '☀️ Light Mode';
+      if (!sunMoon.querySelector('.moon-shadow')) {
+        const shadow = document.createElement('div');
+        shadow.classList.add('moon-shadow');
+        sunMoon.appendChild(shadow);
+      }
+    } else {
+      toggleButton.textContent = '🌙 Dark Mode';
+      const shadow = sunMoon.querySelector('.moon-shadow');
+      if (shadow) shadow.remove();
+    }
+  });
+
+  function navigateToPage(page) {
+    // Validate the input page to ensure safe navigation
+    if (page && typeof page === 'string') {
+        window.location.href = page;
+    } else {
+        console.error('Invalid page URL');
+    }
+}
+        </script>
+    </div>
+  </head>
+
+
+<body class="background">
+<div class="partition">
+<div class="cloud cloud-small"></div>
+<div class="cloud cloud-medium"></div>
+<div class="cloud cloud-1"></div>
+<div class="cloud cloud-2"></div>
+ <div class="cloud cloud-large"></div>
+
+<div class="sun-moon" id="sunMoon"></div>
+</div>
+
+</body>
+
+<body class="dashboard">
+
+  <div class="flex h-screen">
+    <nav class="sidebar">
+      
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="/profile" class="nav-link">
+            <span class="icon">👤</span>
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/activity" class="nav-link">
+            <span class="icon">📊</span>
+            <span>My Activity</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/saved" class="nav-link">
+            <span class="icon">🔖</span>
+            <span>Saved</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/scheduled" class="nav-link">
+            <span class="icon">📅</span>
+            <span style="color: rgb(171, 81, 212);">My Applications</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/activity" class="nav-link">
+            <span class="icon">📑</span>
+            <span>Documents</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/signout" class="nav-link">
+            <span class="icon">📤</span>
+            <span>Log Out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="whitecolor"></main>
+    <main class="main-content">
+      <div class="mail-dashboard">
+        <div class="mail-header">
+          
+          <div class="search-container">
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+            <input type="text" placeholder="Search..." class="search-input" />
+          </div>
+
+          
+          <div class="application-filter">
+            <i class="filter-icon fas fa-filter"></i>
+            <select class="styled-select">
+              <option value="all">All</option>
+              <option value="applied">Applied</option>
+              <option value="suggested">Suggested</option>
+            </select>
+          </div>
+       
+        </div>
+        <div class="mail-list">
+          <div class="mail-item">
+            <div class="mail-sender">Ministry of Rural Development</div>
+            <div class="mail-subject">Pradhan Mantri Awas Yojana (PMAY)</div>
+            <div class="mail-snippet">
+              A scheme to provide affordable housing for all by 2024.
+            </div>
+            <div class="mail-timestamp">2 days ago</div>
+          </div>
+          <div class="mail-item">
+            <div class="mail-sender">Ministry of Agriculture</div>
+            <div class="mail-subject">PM Kisan Samman Nidhi Yojana</div>
+            <div class="mail-snippet">
+              Financial assistance of ₹6000 per year for small farmers.
+            </div>
+            <div class="mail-timestamp">3 days ago</div>
+          </div>
+          <div class="mail-item">
+            <div class="mail-sender">Ministry of Education</div>
+            <div class="mail-subject">Samagra Shiksha Abhiyan</div>
+            <div class="mail-snippet">
+              A comprehensive program for the education sector.
+            </div>
+            <div class="mail-timestamp">1 week ago</div>
+          </div>
+          <div class="mail-item">
+            <div class="mail-sender">Ministry of Health</div>
+            <div class="mail-subject">Ayushman Bharat</div>
+            <div class="mail-snippet">
+              Health insurance scheme for underprivileged families.
+            </div>
+            <div class="mail-timestamp">2 weeks ago</div>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+  </div>
+
+
+</body>
+
+<script>
+ 
+
+
+
+</script>
+</body>
+</html>
