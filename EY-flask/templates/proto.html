@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chatbot</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='proto.css')}}">
+</head>
+<body>
+  <div class="chatbot-container">
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <div class="icon">
+        <img src="bot-icon.png" alt="Bot Icon">
+      </div>
+      <h2>AI Assistant</h2>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">
+        <div class="message-content">
+          <span class="sender">AI Assistant</span>
+          <p>Hello! How can I help you today?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typing Indicator -->
+    <div class="typing-indicator" id="typingIndicator" style="display: none;">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <!-- Input Area -->
+    <form class="chat-input-area" id="chatForm">
+      <input
+        type="text"
+        id="chatInput"
+        placeholder="Type your message..."
+        autocomplete="off"
+      >
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="proto.js"></script>
+</body>
+</html>

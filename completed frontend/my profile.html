@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Mode Toggle</title>
+  <link rel="stylesheet" href="demo3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+    <div class="header">
+        <div class="logo" onclick="navigateToPage('animation.html')">logo</div>
+        <div class="scheme-section">
+          <div class="scheme" onclick="navigateToPage('scheme.html')">
+              <i class="fas fa-user"></i> Schemes
+          </div>
+        </div>
+        <div class="menu">
+            <div class="language-selector">
+                <i class="fas fa-language"></i>
+                <select>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <div class="help-section" >
+                <div class="help"><i class="fas fa-question-circle"></i> Help</div>
+
+            </div>
+            <div class="login-section">
+              <div class="login" onclick="navigateToPage('login.html')">
+                  <i class="fas fa-user"></i> Sign-in
+              </div>
+          </div>
+          </div>
+        </div>
+        <button class="button" id="toggleButton">🌙 Dark Mode</button>
+        <script>
+           const toggleButton = document.getElementById('toggleButton');
+  const body = document.body;
+  const sunMoon = document.getElementById('sunMoon');
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+      toggleButton.textContent = '☀️ Light Mode';
+      if (!sunMoon.querySelector('.moon-shadow')) {
+        const shadow = document.createElement('div');
+        shadow.classList.add('moon-shadow');
+        sunMoon.appendChild(shadow);
+      }
+    } else {
+      toggleButton.textContent = '🌙 Dark Mode';
+      const shadow = sunMoon.querySelector('.moon-shadow');
+      if (shadow) shadow.remove();
+    }
+  });
+
+  function navigateToPage(page) {
+    // Validate the input page to ensure safe navigation
+    if (page && typeof page === 'string') {
+        window.location.href = page;
+    } else {
+        console.error('Invalid page URL');
+    }
+}
+        </script>
+    </div>
+  </head>
+
+
+<body class="background">
+<div class="partition">
+<div class="cloud cloud-small"></div>
+<div class="cloud cloud-medium"></div>
+<div class="cloud cloud-1"></div>
+<div class="cloud cloud-2"></div>
+ <div class="cloud cloud-large"></div>
+
+<div class="sun-moon" id="sunMoon"></div>
+</div>
+
+</body>
+
+<body class="dashboard">
+
+  <div class="flex h-screen">
+    <nav class="sidebar">
+      
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="/profile" class="nav-link">
+            <span class="icon">👤</span>
+            <span style="color: rgb(171, 81, 212);">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/activity" class="nav-link">
+            <span class="icon">📊</span>
+            <span>My Activity</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/saved" class="nav-link">
+            <span class="icon">🔖</span>
+            <span>Saved</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/scheduled" class="nav-link">
+            <span class="icon">📅</span>
+            <span>Scheduled</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/activity" class="nav-link">
+            <span class="icon">📑</span>
+            <span>Documents</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/signout" class="nav-link">
+            <span class="icon">📤</span>
+            <span>Log Out</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main class="whitecolor"></main>
+    <main class="main-content">
+      <div class="content profile-section">
+        <div class="profile-header">
+          <img src="assets/download.jpeg" alt="Profile Picture" class="profile-pic">
+          <div class="profile-info">
+            <h2>Your Name</h2>
+            <p>BOB : MM/DD/YYYY</p>
+            <p>City, State</p>
+            <p>Mo:0000000000 | <a href="mailto:example@example.com">Your email</a></p>
+          </div>
+          <button class="Change-Account">Change Account</button>
+        </div>
+        <div class="profile-body">
+          <div class="recent-activity">
+            <h3>Recent Activity</h3>
+            <ul>
+              <li><strong>2 days ago:</strong>Verification completed </li>
+              <li><strong>3 days ago:</strong> Verification under scrutiny</li>
+              <li><strong>6 days ago:</strong> Applied for the Ladki Bahin Yojana</li>
+              <li><strong>20 Aug:</strong> Updated his profile picture</li>
+              <li><strong>15 Aug:</strong> Joined Platform</li>
+            </ul>
+          </div>
+          <div class="premium-deals">
+            <h3>Other Info.</h3>
+            <ul>
+              <li><strong>Aadhar:</strong> XXXX-XXXX-1234</li>
+              <li><strong>Applied schemes:</strong> 12</li>
+              <li><strong>Claimed schemes:</strong> 09</li>
+              <li><strong>Under scrutiny:</strong> 03</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+</body>
+
+<script>
+ 
+
+
+
+</script>
+</body>
+</html>

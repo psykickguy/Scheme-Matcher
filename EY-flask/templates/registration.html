@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration and Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{url_for('static', filename='style-registration.css')}}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">logo</div>
+        <div class="menu">
+            <div class="login-container">
+                <div class="login">Login</div>
+            </div>
+            <div class="main-menu">
+                <div class="option">Eligibilty</div>
+                <div class="option">Scheme</div>
+                <div class="option">Verification</div>
+            </div>
+            <div class="profile">
+                <img src="./assets/profile.webp" class="profile-img">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Register / Login</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <div class="input-icon">
+                    <i class="fa fa-user"></i>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <div class="input-icon">
+                    <i class="fa fa-phone"></i>
+                    <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-icon">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="aadhaar">Aadhaar Number</label>
+                <div class="input-icon">
+                    <i class="fa fa-id-card"></i>
+                    <input type="text" id="aadhaar" name="aadhaar" placeholder="Enter your Aadhaar number">
+                </div>
+            </div>
+            <button class="btn">Sign Up</button>
+        </form>
+        <div class="login-options">
+            <button><i class="fa fa-shield-alt"></i> OTP Login</button>
+            <button><i class="fa-brands fa-google"></i></button>
+            <button><i class="fa-brands fa-facebook"></i></button>
+        </div>
+        <div class="language-selector">
+            <label for="language">Language: </label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+            </select>
+        </div>
+    </div>
+</body>
+</html>
