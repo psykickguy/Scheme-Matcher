@@ -324,6 +324,9 @@ scheme-section {
   position: relative;
   margin-right: 1rem;
 }
+.ai-box a {
+  text-decoration: none;
+}
 .flex-container {
   display: flex;
   align-items: center;
@@ -340,7 +343,10 @@ scheme-section {
 .image-wrapper {
   margin-right: 1rem; /* Add some space between the image and state-info */
 }
-
+.image-wrapper img {
+  height: 75px;
+  width: auto;
+}
 .state-info {
   display: flex;
   flex-direction: column;
@@ -443,4 +449,7 @@ scheme-section {
 
 .ai-box::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Opera */
+}
+.logo a {
+  text-decoration: none;
 }

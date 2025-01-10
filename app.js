@@ -29,17 +29,36 @@ app.get("/", (req, res) => {
   res.send("Hi, I am root");
 });
 
+//home route
+app.get("/home", async (req, res) => {
+  const allListings = await Listing.find({});
+  res.render("listings/new-home.ejs", { allListings });
+});
+
 //Scheme list route
-app.get("/listings", async (req, res) => {
+app.get("/home/listings", async (req, res) => {
   const allListings = await Listing.find({});
   res.render("listings/scheme-list.ejs", { allListings });
 });
 
-// Scheme
+// Scheme details route
 app.get("/listings/:id", async (req, res) => {
   let { id } = req.params;
   const listing = await Listing.findById(id);
-  res.render("listings/scheme.ejs", { listing });
+  const allListings = await Listing.find({});
+  res.render("listings/scheme.ejs", { listing, allListings });
+});
+
+app.get("/home/eligibility", (req, res) => {
+  res.render("listings/animation.ejs");
+});
+
+app.get("/home/login", (req, res) => {
+  res.render("listings/login.ejs");
+});
+
+app.get("/home/registration", (req, res) => {
+  res.render("listings/registration.ejs");
 });
 
 // app.get("/testListing", async (req, res) => {

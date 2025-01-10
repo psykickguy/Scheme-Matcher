@@ -21,7 +21,7 @@
   </head>
   <body>
     <div class="header">
-      <div class="logo">logo</div>
+      <div class="logo"><a href="/home %>">logo</a></div>
       <div class="scheme-section">
         <div class="scheme" onclick="navigateToPage('scheme.html')">
           <i class="fas fa-user"></i> Schemes
@@ -43,8 +43,8 @@
         <div class="help"><i class="fas fa-question-circle"></i> Help</div>
       </div>
       <div class="login-section">
-        <div class="login" onclick="navigateToPage('login.html')">
-          <i class="fas fa-user"></i> Sign-in
+        <div class="login">
+          <a href="/home/login %>"><i class="fas fa-user"></i> Sign-in</a>
         </div>
       </div>
     </div>
@@ -137,11 +137,7 @@
             <div class="scheme-card">
               <h4><%= listing.title %></h4>
               <a href="#"><%= listing.department %></a>
-              <p>
-                The scheme “Financial Assistance to Disabled Students Pursuing
-                (10th, 11th, 12th Equivalent Exams)” was launched by the
-                Department of Social Justice, Government of Kerala.
-              </p>
+              <p><%= listing.details %></p>
               <div class="category">
                 <div
                   class="btn-group"

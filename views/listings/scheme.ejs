@@ -21,9 +21,9 @@
   </head>
   <body>
     <div class="header">
-      <div class="logo">logo</div>
+      <div class="logo"><a href="/home %>">logo</a></div>
       <div class="scheme-section">
-        <a href="/listings"
+        <a href="/home/listings"
           ><div class="scheme"><i class="fas fa-user"></i> Schemes</div></a
         >
       </div>
@@ -48,7 +48,9 @@
           <div class="help"><i class="fas fa-question-circle"></i> Help</div>
         </div>
         <div class="login-section">
-          <div class="login"><i class="fas fa-user"></i> Sign-in</div>
+          <div class="login">
+            <a href="/home/login %>"><i class="fas fa-user"></i> Sign-in</a>
+          </div>
         </div>
       </div>
     </div>
@@ -132,93 +134,39 @@
         <div class="recommendation">
           <h5>AI Recommendations</h5>
           <div class="ai-box">
-            <div class="state-container">
-              <div class="flex-container">
-                <div class="image-wrapper">
-                  <img
-                    alt="Karnataka"
-                    title="Karnataka"
-                    src="./assets/Karnataka.svg"
-                    class="state-image"
-                    loading="lazy"
-                  />
-                </div>
+            <% for(let listing of allListings) { %>
+            <a href="/listings/<%= listing._id %>">
+              <div class="state-container">
+                <div class="flex-container">
+                  <div class="image-wrapper">
+                    <img
+                      alt="Karnataka"
+                      title="Karnataka"
+                      src="https://e7.pngegg.com/pngimages/408/217/png-clipart-public-administration-business-administration-organization-gestion-paraestatalidad-concierto-text-trademark-thumbnail.png"
+                      class="state-image"
+                      loading="lazy"
+                    />
+                  </div>
 
-                <div class="state-info">
-                  <h2 class="state-title">Karnataka</h2>
+                  <div class="state-info">
+                    <h2 class="state-title"><%= listing.department %></h2>
 
-                  <div class="state-numbers">
-                    <span class="state-number">
-                      <span class="number">59</span>
-                      <span class="label">State</span>
-                    </span>
+                    <div class="state-numbers">
+                      <span class="state-number">
+                        <span class="number">59</span>
+                        <span class="label">State</span>
+                      </span>
 
-                    <span class="state-number">
-                      <span class="number">506</span>
-                      <span class="label">Central</span>
-                    </span>
+                      <span class="state-number">
+                        <span class="number">506</span>
+                        <span class="label">Central</span>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="state-container">
-              <div class="flex-container">
-                <div class="image-wrapper">
-                  <img
-                    alt="Karnataka"
-                    title="Karnataka"
-                    src="./assets/Karnataka.svg"
-                    class="state-image"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div class="state-info">
-                  <h2 class="state-title">Karnataka</h2>
-
-                  <div class="state-numbers">
-                    <span class="state-number">
-                      <span class="number">59</span>
-                      <span class="label">State</span>
-                    </span>
-
-                    <span class="state-number">
-                      <span class="number">506</span>
-                      <span class="label">Central</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="state-container">
-              <div class="flex-container">
-                <div class="image-wrapper">
-                  <img
-                    alt="Karnataka"
-                    title="Karnataka"
-                    src="./assets/Karnataka.svg"
-                    class="state-image"
-                    loading="lazy"
-                  />
-                </div>
-
-                <div class="state-info">
-                  <h2 class="state-title">Karnataka</h2>
-
-                  <div class="state-numbers">
-                    <span class="state-number">
-                      <span class="number">59</span>
-                      <span class="label">State</span>
-                    </span>
-
-                    <span class="state-number">
-                      <span class="number">506</span>
-                      <span class="label">Central</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </a>
+            <% } %>
           </div>
         </div>
       </div>
